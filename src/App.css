@@ -1,0 +1,17 @@
+body {
+    font-family: Roboto, sans-serif;
+}
+
+.app {
+    background: black;
+    color: white;
+    overflow: scroll;
+    height: 100vh;
+}
+.app::-webkit-scrollbar {
+    display: none;
+}
+h1 {
+    margin: 5px;
+    height: 3rem;
+}

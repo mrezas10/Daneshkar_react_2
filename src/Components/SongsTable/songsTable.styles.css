@@ -1,0 +1,17 @@
+.songs-table {
+    width: 60vw;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(14.9px);
+    -webkit-backdrop-filter: blur(14.9px);
+
+}
+
+@media screen and (max-width: 500px) {
+    .songs-table {
+        transform: translateY(50vh);
+        height: 50vh;
+    }
+}

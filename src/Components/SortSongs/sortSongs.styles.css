@@ -1,0 +1,55 @@
+ul {
+    list-style-type: none;
+}
+
+.sort-songs {
+    width: 60vw;
+    height: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px gray solid;
+}
+
+.sort-by {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin: 0 5px;
+    padding: 0;
+    align-items: center;
+}
+
+.sort-title {
+    font-weight: bold;
+}
+
+.action-buttons {
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.material-icons {
+    cursor: pointer;
+}
+
+.material-icons:hover {
+    color: gold;
+}
+
+.sort-buttons:hover {
+    color: gold;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 500px){
+    .sort-songs {
+        width: 100vw;
+        transform: translateY(50vh);
+    }
+    h1 {
+        transform: translateY(50vh);
+    }
+}

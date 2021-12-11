@@ -1,0 +1,104 @@
+.song-preview {
+    width: 40vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background: black;
+    box-shadow: 0 0 50px 23px rgba(255,255,255,0.05);
+}
+
+.song-img {
+    width: 50%;
+    border-radius: 10px;
+    border: 1px gray solid;
+}
+.preview-actions {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+}
+
+button{
+    border:none;
+    background: transparent;
+    color: white;
+    font-size: 2rem;
+}
+
+button:hover {
+    color: gold;
+}
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+textarea:focus{
+    border: none;
+}
+
+#song-preview-name {
+    font-weight: normal;
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+.song-preview-subtext {
+    font-weight: normal;
+    font-size: 1.3rem;
+    margin: 0;
+    color: gray;
+}
+
+#song-progress {
+    margin: 1rem;
+    width: 70%;
+    height: 1px;
+    border: 1px white solid;
+    background: white;
+}
+
+#song-timer {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#player-buttons {
+    padding: 2rem;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.player-icons {
+    font-size: 7vw;
+}
+
+.top-buttons {
+    font-size: 2.5vw;
+}
+
+@media screen and (max-width: 500px) {
+    .song-preview {
+        width: 100vw;
+        height: 50vh;
+        z-index: 1;
+    }
+    .song-img {
+        width: 30%;
+    }
+    .top-buttons {
+        font-size: 5vw;
+    }
+    .player-icons {
+        font-size: 10vw;
+    }
+}
