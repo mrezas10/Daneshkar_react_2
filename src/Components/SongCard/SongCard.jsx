@@ -22,7 +22,7 @@ const SongCard = ({item, setPreview}) => {
                         {item.album}
                     </div>
                     <div>
-                        {Math.floor(Number(item.length)/60).toString() + ":" + Math.floor((Number(item.length)%60)/10).toFixed(1).toString().replace("." , "")}
+                        {Math.floor(Number(item.length)/60).toString() + ":" + ((Number(item.length)%60)/10).toFixed(1).toString().replace("." , "")}
                     </div>
                 </div>
             </td>

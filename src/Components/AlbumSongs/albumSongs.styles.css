@@ -1,0 +1,29 @@
+.album-desc {
+    width: 60vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px gray solid;
+}
+
+.album-desc-img {
+    width: 20%;
+    border-radius: 5px;
+    border: 1px gray solid;
+}
+
+.album-desc-text {
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 500px){
+    .album-desc {
+        width: 100vw;
+    }
+
+    .album-table {
+        transform: translateY(50vh);
+    }
+}

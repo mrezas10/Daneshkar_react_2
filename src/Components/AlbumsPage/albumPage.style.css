@@ -1,0 +1,15 @@
+.album-page {
+    width: 60vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 500px){
+    .album-page {
+        transform: translateY(50vh);
+        width: 100vw;
+        flex-direction: column;
+        align-items: center;
+    }
+}

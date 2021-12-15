@@ -32,7 +32,7 @@ input {
     border:none;
     background: transparent;
     color: white;
-    width: 30vw;
+    width: 100%;
     border-bottom: 1px gray solid;
 }
 #close-button {

@@ -22,7 +22,7 @@ const SongPreview = ({song , songs , setSongs ,setSong, setPreview}) => {
             <div id="song-progress"> </div>
             <div id="song-timer">
                 <div>0:00</div>
-                <div>{Math.floor(Number(song.length)/60).toString() + ":" + Math.floor((Number(song.length)%60)/10).toFixed(1).toString().replace("." , "")}</div>
+                <div>{Math.floor(Number(song.length)/60).toString() + ":" + ((Number(song.length)%60)/10).toFixed(1).toString().replace("." , "")}</div>
             </div>
             <div id="player-buttons">
                 <div>

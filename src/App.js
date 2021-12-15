@@ -1,9 +1,8 @@
 import {useState , useEffect} from 'react'
 import './App.css';
-import SongsTable from "./Components/SongsTable/SongsTable";
-import SongForm from "./Components/SongForm/SongForm";
-import SongPreview from "./Components/SongPreview/SongPreview";
-import SortSongs from "./Components/SortSongs/SortSongs";
+import {SongForm, SongPreview, SortSongs, SongsTable, AlbumsPage, ArtistsPage, AlbumSongs, ArtistSongs} from "./Components"
+import {Outlet , Route , BrowserRouter , Routes , Link} from "react-router-dom";
+
 const songsList = [
   { id: 1, img: "https://images.saymedia-content.com/.image/t_share/MTc4NzcyMTMzODg1NzgxNTEx/10-reasons-why-i-love-music.jpg", name: "Teary Hope", album: "Crowd control", artist: 'Bee Gees', length: '279' },
   { id: 2, img: "https://images.saymedia-content.com/.image/t_share/MTc4NzcyMTMzODg1NzgxNTEx/10-reasons-why-i-love-music.jpg", name: "Adorable Dream", album: "Crowd control", artist: 'Bee Gees', length: '212' },
@@ -24,14 +23,53 @@ function App() {
   } , [songs])
 
     return (
-    <div className="app">
-      <SongPreview song={preview} setSongs={setSongs} songs={songs} setSong={setSong} setPreview={setPreview}/>
-      <SongForm song={song} setSong={setSong} setSongs={setSongs} songs={songs}/>
-      <h1>Music</h1>
-      <SortSongs songs={songs} setSongs={setSongs}/>
-      <SongsTable song={song} setSong={setSong} setSongs={setSong} songs={songs} setPreview={setPreview}/>
-    </div>
+
+            <div className="app">
+                <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<div>
+                        <SongPreview song={preview} setSongs={setSongs} songs={songs} setSong={setSong} setPreview={setPreview}/>
+                        <SongForm song={song} setSong={setSong} setSongs={setSongs} songs={songs}/>
+                        <Menu/>
+                        <Outlet/>
+                    </div>
+                    }>
+                        <Route index element={<div>
+                            <SortSongs songs={songs} setSongs={setSongs}/>
+                            <SongsTable song={song} setSong={setSong} setSongs={setSong} songs={songs} setPreview={setPreview}/>
+                        </div>
+                        }/>
+                        <Route path="/albums">
+                            <Route index element={<AlbumsPage songs={songs}/>}/>
+                            <Route path=":Album" element={<AlbumSongs songs={songs} setSongs={setSongs} setSong={setSong} setPreview={setPreview}/>}/>
+                        </Route>
+                        <Route path="/artists">
+                            <Route index element={<ArtistsPage songs={songs}/>}/>
+                            <Route path=":Artist" element={<ArtistSongs songs={songs} setSongs={setSongs} setSong={setSong} setPreview={setPreview}/>}/>
+                        </Route>
+                    </Route>
+                </Routes>
+                </BrowserRouter>
+            </div>
+
   );
+}
+
+const Menu = () => {
+  return (
+          <div className="app-menu">
+              <div>
+                  <Link className="app-links" to="/">Music</Link>
+              </div>
+              <div>
+                  <Link className="app-links" to="/albums">Albums</Link>
+              </div>
+              <div>
+                  <Link className="app-links" to="/artists">Artists</Link>
+              </div>
+          </div>
+  )
+
 }
 
 export default App;

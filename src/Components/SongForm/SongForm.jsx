@@ -33,8 +33,11 @@ const SongForm = ({songs , setSongs , song , setSong}) => {
             <form id="song-form" className="closed" onSubmit={handleAdd}>
                 <div onClick={() => {
                     let form = document.getElementById("song-form")
-                    if(form.className === "opened")
+                    if(form.className === "opened") {
                         form.className = "closed"
+                        setSong({ name: '', img:'', artist: '', album: '', length: '' })
+                    }
+
                 }} id="close-button">
                     <span className="material-icons">close</span>
                 </div>

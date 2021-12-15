@@ -1,0 +1,27 @@
+.album-card {
+    width: 30%;
+    border: 1px gray solid;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1%;
+    align-items: center;
+    text-decoration: none;
+}
+
+.album-image {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.album-name {
+    color: white;
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 500px){
+    .album-card {
+        width: 90%;
+    }
+}

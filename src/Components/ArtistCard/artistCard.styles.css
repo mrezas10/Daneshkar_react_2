@@ -1,0 +1,17 @@
+.artist-card {
+    width: 60vw;
+    height: 5rem;
+    border-bottom: 1px gray solid;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 500px){
+    .artist-card {
+        width: 100vw;
+    }
+}
